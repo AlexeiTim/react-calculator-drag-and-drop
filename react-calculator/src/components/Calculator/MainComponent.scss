@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.drag {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .block {
+    width: 240px;
+    height: 448px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .left-block__item {
+      width: 240px;
+      text-align: center;
+      cursor: move;
+      position: relative;
+
+
+
+      &.active {
+
+        &::after {
+          content: '';
+          top: calc(100% + 5px);
+          left: 0;
+          position: absolute;
+          width: 240px;
+          border: 1px solid #5D5FEF;
+        }
+      }
+
+      &.error {
+        cursor: no-drop;
+      }
+
+      &.opacity {
+        opacity: 0.5;
+        cursor: no-drop;
+      }
+
+      &.flash-border {
+
+        &::after {
+          content: '';
+          bottom: calc(100% + 5px);
+          left: 0;
+          position: absolute;
+          width: 240px;
+          border: 1px solid #5D5FEF;
+        }
+      }
+
+      &.window {
+
+        &::after {
+          content: '';
+          bottom: calc(100% + 5px);
+          left: 0;
+          position: absolute;
+          width: 240px;
+          border: 1px solid #5D5FEF;
+        }
+      }
+    }
+  }
+
+  .drag__right-block {
+    width: 243px;
+  }
+}
+
+.drag__right-block {
+  border-radius: 6px;
+  transition: all 0.3s;
+
+
+  &.active {
+    background: #F0F9FF
+  }
+}
+
+.drag__right-block .calc-wrapper {
+  height: 448px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calculator__controller {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calc-wrapper {
+  border: 2px dashed #C4C4C4;
+  border-radius: 6px;
+}
+
+.calculator__container {
+  max-width: 127px;
+  text-align: center;
+
+  svg {
+    margin-bottom: 12px;
+  }
+
+  & .calc__text {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #5D5FEF;
+  }
+
+  & .calc__subtext {
+    margin: 0 auto;
+    width: 106px;
+    font-size: 12px;
+    line-height: 15px;
+    color: #6B7280;
+  }
+}
+
+.left-block__item.right {
+  &>div {
+    box-shadow: none;
+  }
+}
+
+.drag__left-block.hidden {
+  transform: scale(0);
+}
