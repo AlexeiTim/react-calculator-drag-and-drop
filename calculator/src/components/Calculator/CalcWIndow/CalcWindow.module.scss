@@ -1,0 +1,39 @@
+.root {
+  width: 240px;
+  height: 60px;
+  padding: 4px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.06), 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+
+  .content {
+    height: 52px;
+    background: #F3F4F6;
+    border-radius: 6px;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    padding-right: 8px;
+    overflow: hidden;
+    white-space: nowrap;
+    flex-direction: column;
+
+    p {
+      font-weight: 800;
+      font-size: 36px;
+      line-height: 44px;
+      color: #111827;
+      padding: 4px;
+      padding-right: 8px;
+      text-align: end;
+    }
+
+    &.active {
+      align-items: end;
+      p {
+        font-weight: 800;
+        font-size: 19px;
+        line-height: 23px;
+      }
+    }
+  }
+}
